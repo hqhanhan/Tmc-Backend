@@ -560,6 +560,21 @@
     <build>
         <finalName>TMC-BACKEND</finalName>
 
+        <!--<defaultGoal>package</defaultGoal>-->
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<excludes>-->
+                    <!--<exclude>dev/**/*.*</exclude>-->
+                    <!--<exclude>pro/**/*.*</exclude>-->
+                    <!--<exclude>test/**/*.*</exclude>-->
+                <!--</excludes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources/${profile}</directory>-->
+            <!--</resource>-->
+        <!--</resources>-->
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
