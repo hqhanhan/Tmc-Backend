@@ -25,6 +25,7 @@
 
         <!-- Spring-->
         <!--<spring.version>4.2.5.RELEASE</spring.version>-->
+
         <!--<spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>-->
         <!--<spring-session.version>1.1.1.RELEASE</spring-session.version>-->
         <!--<spring-data-redis.version>1.6.4.RELEASE</spring-data-redis.version>-->
@@ -118,6 +119,13 @@
 
 
     <dependencies>
+
+        <!-- spring test-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
         <!-- Spring and Spring Boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -134,6 +142,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- spring-boot test-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <!--<version>1.5.2.RELEASE</version>-->
         </dependency>
 
         <!-- Spring Security Oauth2 -->

@@ -89,6 +89,12 @@ public class BookController {
                 .build();
     }
 
+    @DeleteMapping("test/{bookId}")
+    public String index(@PathVariable Long bookId) {
+
+        return "index";
+    }
+
     /********************************** HELPER METHOD **********************************/
     private void assertBookExist(Long bookId) {
         bookService
