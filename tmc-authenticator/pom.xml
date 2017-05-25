@@ -14,5 +14,12 @@
 
     <artifactId>tmc-authenticator</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.bitbucket.b_c</groupId>
+            <artifactId>jose4j</artifactId>
+            <version>0.5.4</version>
+        </dependency>
+    </dependencies>
 
 </project>
