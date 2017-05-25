@@ -1,5 +1,12 @@
 package com.qk.seed.test;
 
+
+/**
+ * 暂时未使用，加上注解异常 TODO 待修改
+ *  @RunWith(SpringJUnit4ClassRunner.class)
+ *  @AutoConfigureMockMvc
+ *  @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE,classes = Start.class)
+ */
 import com.qk.seed.Start;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.service.BookService;
@@ -23,26 +30,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.naming.AuthenticationException;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Supplier;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Description：
- * Created by hqhan on 2017/5/25 0025.
- */
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@AutoConfigureMockMvc
-//@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE,classes = Start.class)
 
-
-
-
-///由于是Web项目，Junit需要模拟ServletContext，因此我们需要给我们的测试类加上@WebAppConfiguration。
+//由于是Web项目，Junit需要模拟ServletContext，因此我们需要给我们的测试类加上@WebAppConfiguration。
 
 @WebAppConfiguration
 @SpringApplicationConfiguration(classes = Start.class)
