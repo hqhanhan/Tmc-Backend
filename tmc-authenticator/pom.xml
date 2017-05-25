@@ -12,7 +12,7 @@
         <relativePath>../tmc-super/pom.xml</relativePath>
     </parent>
 
-    <artifactId>tmc-seed</artifactId>
+    <artifactId>tmc-authenticator</artifactId>
 
 
 </project>

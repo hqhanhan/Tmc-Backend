@@ -12,7 +12,8 @@
         <relativePath>../tmc-super/pom.xml</relativePath>
     </parent>
 
-    <artifactId>tmc-seed</artifactId>
+
+    <artifactId>tmc-order-center</artifactId>
 
 
 </project>

@@ -20,6 +20,10 @@
         <module>tmc-super</module>
         <!-- 种子示范模块-->
         <module>tmc-seed</module>
+        <!-- 订单中心-->
+        <module>tmc-order-center</module>
+        <!-- 认证中心-->
+        <module>tmc-authenticator</module>
     </modules>
 
 
