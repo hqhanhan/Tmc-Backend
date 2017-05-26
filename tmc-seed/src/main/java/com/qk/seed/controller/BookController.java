@@ -32,13 +32,6 @@ public class BookController {
     }
 
     @GetMapping
-    @ApiOperation(value="分页查询书籍", notes="分页查询书籍，默认",httpMethod="GET",response = ResponseEntity.class)
-    @ApiImplicitParams(
-            {
-                    @ApiImplicitParam(name = "page", value = "页码", required = false, dataType = "String"),
-                    @ApiImplicitParam(name = "per_page", value = "数量", required = false, dataType = "String")
-            }
-    )
     public ResponseEntity<?> getBooks(@RequestParam(value = "page", required = false) String pageString,
                                       @RequestParam(value = "per_page", required = false) String perPageString) {
         // Parse request parameters

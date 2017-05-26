@@ -1,5 +1,6 @@
 package com.qk.seed.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.service.ApiInfo;
@@ -11,9 +12,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Description：
  * Created by hqhan on 2017/5/26 0026.
  */
-@Configuration
+
 @EnableSwagger2
-public class ApplicationSwaggerConfig {
+@Configuration
+public class SwaggerConfig {
 
     @Bean
     public Docket addUserDocket() {
