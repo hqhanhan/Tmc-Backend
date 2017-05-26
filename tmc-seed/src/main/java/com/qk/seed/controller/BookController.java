@@ -7,6 +7,10 @@ import com.qk.seed.model.dto.PaginatedResult;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.service.BookService;
 import com.qk.seed.util.PageUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
-
+@Api(value = "book服务",description="简单的计算服务API")
 @RestController
 @RequestMapping("/books")
 public class BookController {
@@ -28,6 +32,13 @@ public class BookController {
     }
 
     @GetMapping
+    @ApiOperation(value="分页查询书籍", notes="分页查询书籍，默认",httpMethod="GET",response = ResponseEntity.class)
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "page", value = "页码", required = false, dataType = "String"),
+                    @ApiImplicitParam(name = "per_page", value = "数量", required = false, dataType = "String")
+            }
+    )
     public ResponseEntity<?> getBooks(@RequestParam(value = "page", required = false) String pageString,
                                       @RequestParam(value = "per_page", required = false) String perPageString) {
         // Parse request parameters

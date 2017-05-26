@@ -114,6 +114,8 @@
         <!--<mysql-connector-java.version>5.1.40</mysql-connector-java.version>-->
         <mysql-connector-java.version>6.0.5</mysql-connector-java.version>
 
+        <!--文档管理-->
+        <swagger2.version>2.2.2</swagger2.version>
 
     </properties>
 
@@ -124,6 +126,19 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+        </dependency>
+
+        <!-- 引入 spring-boot -swagger 并生成API文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger2.version}</version>
         </dependency>
 
         <!-- Spring and Spring Boot dependencies -->
