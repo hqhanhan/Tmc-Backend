@@ -122,6 +122,18 @@
 
     <dependencies>
 
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
+        </dependency>
+
+        <!-- 暂时未使用 分布式事务，使用-->
+        <dependency>
+            <groupId>org.codehaus.btm</groupId>
+            <artifactId>btm</artifactId>
+        </dependency>
+
         <!-- spring test-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -568,6 +580,16 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--添加基类-->
+        <dependency>
+            <groupId>com.qk</groupId>
+            <artifactId>tmc-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+
+
+
 
 
     </dependencies>
@@ -630,7 +652,7 @@
                 </configuration>
             </plugin>
 
-            <!-- maven自动生成 mapper、xml、po -->
+            <!-- maven自动生成 seed、xml、po -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>

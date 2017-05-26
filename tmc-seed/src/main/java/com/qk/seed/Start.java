@@ -1,6 +1,6 @@
 package com.qk.seed;
 
-import com.qk.seed.config.SwaggerConfig;
+import com.qk.seed.spring.SeedConfigProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @EnableTransactionManagement
+@EnableConfigurationProperties(value = { SeedConfigProperties.class })
 public class Start extends SpringBootServletInitializer {
 
     @Override

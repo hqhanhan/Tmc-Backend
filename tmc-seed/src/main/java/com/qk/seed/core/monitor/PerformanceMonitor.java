@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 
 @CommonsLog
-//@Aspect
-//@Component
+@Aspect
+@Component
 public class PerformanceMonitor {
 
     /**

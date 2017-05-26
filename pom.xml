@@ -25,6 +25,9 @@
         <!-- 认证中心-->
         <module>tmc-authenticator</module>
         <module>tmc-jta</module>
+        <module>tmc-base</module>
+        <module>tmc-entity</module>
+        <module>tmc-dao</module>
     </modules>
 
 

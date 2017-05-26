@@ -1,5 +1,6 @@
 package com.qk.seed.service.impl;
 
+import com.qk.seed.dao.mapper.BookMapper;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.model.po.BookWithBookStore;
 import com.qk.seed.dao.repository.BookRepository;
@@ -20,13 +21,17 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
 
     @Autowired
+    private BookMapper bookMapper;
+
+    @Autowired
     public BookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
     @Override
     public Optional<Book> getBookById(Long id) {
-        return Optional.ofNullable(bookRepository.selectBookById(id));
+        Book book = bookMapper.selectBookById(id);
+        return Optional.ofNullable(book);
     }
 
     @Override

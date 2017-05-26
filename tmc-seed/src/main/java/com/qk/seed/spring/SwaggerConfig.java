@@ -1,6 +1,5 @@
-package com.qk.seed.config;
+package com.qk.seed.spring;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.service.ApiInfo;
