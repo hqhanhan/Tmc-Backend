@@ -5,12 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-/**
- * Description：base项目 properties数据配置
- * Created by hqhan on 2017/5/26 0026.
- */
 
 
 @Accessors(chain = true)
@@ -20,9 +14,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ToString
 public  class ConfigProperties {
 
-    /**
-     * 关于alibaba druid 配置信息
-     */
+
     private String driverClassName;
     private String url;
     private String username;
@@ -41,9 +33,7 @@ public  class ConfigProperties {
     private int maxPoolPreparedStatementPerConnectionSize;
     private String filters;
 
-    /**
-     * 关于atomikos 配置信息
-     */
+
     private String xaDataSourceClassName;
     private String uniqueName;
     private int minPoolSize;

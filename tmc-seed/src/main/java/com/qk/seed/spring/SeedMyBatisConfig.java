@@ -36,7 +36,7 @@ public class SeedMyBatisConfig extends MyBatisConfig {
     @Bean(name = "seedSqlSessionFactory")
     @Override
     public SqlSessionFactory sqlSessionFactory(@Qualifier("seedDataSource")DataSource dataSource) throws Exception  {
-        return super.createSqlSessionFactory(dataSource,"/mapper/","com.qk.seed.model");
+        return super.createSqlSessionFactory(dataSource,"/seed/mapper/","com.qk.seed.model");
     }
 
     @Bean(name = "seedSqlSessionTemplate")
