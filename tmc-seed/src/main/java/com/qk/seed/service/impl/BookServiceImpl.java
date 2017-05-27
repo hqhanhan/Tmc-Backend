@@ -28,23 +28,27 @@ public class BookServiceImpl implements BookService {
         this.bookRepository = bookRepository;
     }
 
+    @Transactional
     @Override
     public Optional<Book> getBookById(Long id) {
         Book book = bookMapper.selectBookById(id);
         return Optional.ofNullable(book);
     }
 
+    @Transactional
     @Override
     public List<Book> getBooksByAuthor(String author) {
         return bookRepository.selectBooksByAuthor(author);
     }
 
+    @Transactional
     @Override
     public List<Book> getBooksByPage(Integer page, Integer perPage) {
         Integer offset = PageUtil.calculateOffset(page, perPage);
         return bookRepository.selectBooksByPage(offset, perPage);
     }
 
+    @Transactional
     @Override
     public List<String> getAllBookNames() {
         return bookRepository
@@ -54,11 +58,14 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
     }
 
+
+    @Transactional
     @Override
     public Optional<BookWithBookStore> getBookWithBookStoreById(Long id) {
         return Optional.ofNullable(bookRepository.selectBookWithBookStoreById(id));
     }
 
+    @Transactional
     @Override
     public Integer getTotalPage(Integer perPage) {
         return PageUtil.calculateTotalPage(bookRepository.selectCount(), perPage);

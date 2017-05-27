@@ -1,7 +1,7 @@
 package com.qk.base.spring;
 
 import com.atomikos.jdbc.AtomikosDataSourceBean;
-import com.alibaba.druid.pool.xa.DruidXADataSource;
+import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -23,30 +23,40 @@ public abstract  class MyBatisConfig {
 
 	protected DataSource createDataSource(ConfigProperties baseConfig,String uniqueResourceName) throws SQLException {
 
-		DruidXADataSource druidXADataSource = new DruidXADataSource();
-		druidXADataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		druidXADataSource.setUrl(baseConfig.getUrl());
-		druidXADataSource.setUsername(baseConfig.getUsername());
-		druidXADataSource.setPassword(baseConfig.getPassword());
-        druidXADataSource.setInitialSize(baseConfig.getInitialSize());
-        druidXADataSource.setMaxActive(baseConfig.getMaxActive());
-        druidXADataSource.setMaxWait(baseConfig.getMaxWait());
-        druidXADataSource.setTimeBetweenEvictionRunsMillis(baseConfig.getTimeBetweenEvictionRunsMillis());
-        druidXADataSource.setMinEvictableIdleTimeMillis(baseConfig.getMinEvictableIdleTimeMillis());
-        druidXADataSource.setValidationQuery(baseConfig.getValidationQuery());
-        druidXADataSource.setTestWhileIdle(baseConfig.isTestWhileIdle());
-        druidXADataSource.setTestOnBorrow(baseConfig.isTestOnBorrow());
-        druidXADataSource.setTestOnReturn(baseConfig.isTestOnReturn());
-        druidXADataSource.setPoolPreparedStatements(baseConfig.isPoolPreparedStatements());
-        druidXADataSource.setMaxPoolPreparedStatementPerConnectionSize(baseConfig.getMaxPoolPreparedStatementPerConnectionSize());
-        try {
-            druidXADataSource.setFilters(baseConfig.getFilters());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+		//druid数据源连接
+//		DruidXADataSource dataSource = new DruidXADataSource();
+//		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//		dataSource.setUrl(baseConfig.getUrl());
+//		dataSource.setUsername(baseConfig.getUsername());
+//		dataSource.setPassword(baseConfig.getPassword());
+//        dataSource.setInitialSize(baseConfig.getInitialSize());
+//        dataSource.setMaxActive(baseConfig.getMaxActive());
+//        dataSource.setMaxWait(baseConfig.getMaxWait());
+//        dataSource.setTimeBetweenEvictionRunsMillis(baseConfig.getTimeBetweenEvictionRunsMillis());
+//        dataSource.setMinEvictableIdleTimeMillis(baseConfig.getMinEvictableIdleTimeMillis());
+//        dataSource.setValidationQuery(baseConfig.getValidationQuery());
+//        dataSource.setTestWhileIdle(baseConfig.isTestWhileIdle());
+//        dataSource.setTestOnBorrow(baseConfig.isTestOnBorrow());
+//        dataSource.setTestOnReturn(baseConfig.isTestOnReturn());
+//        dataSource.setPoolPreparedStatements(baseConfig.isPoolPreparedStatements());
+//        dataSource.setMaxPoolPreparedStatementPerConnectionSize(baseConfig.getMaxPoolPreparedStatementPerConnectionSize());
+//        try {
+//            druidXADataSource.setFilters(baseConfig.getFilters());
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+
+
+		//常规数据源连接池
+		MysqlXADataSource dataSource = new MysqlXADataSource();
+		dataSource.setUrl(baseConfig.getUrl());
+		dataSource.setPinGlobalTxToPhysicalConnection(true);
+		dataSource.setPassword(baseConfig.getPassword());
+		dataSource.setUser(baseConfig.getUsername());
+		dataSource.setPinGlobalTxToPhysicalConnection(true);
 
 		AtomikosDataSourceBean wrapped  = new AtomikosDataSourceBean();
-		wrapped .setXaDataSource(druidXADataSource);
+		wrapped .setXaDataSource(dataSource);
 		wrapped .setUniqueResourceName(uniqueResourceName);
 		wrapped .setXaDataSourceClassName(baseConfig.getXaDataSourceClassName());
 		wrapped .setMinPoolSize(baseConfig.getMinPoolSize());

@@ -31,8 +31,6 @@
         <!--<spring-data-redis.version>1.6.4.RELEASE</spring-data-redis.version>-->
         <!-- Redis client-->
         <jedis.version>2.8.1</jedis.version>
-        <!-- apache 内嵌数据库-->
-        <derby.version>10.13.1.1</derby.version>
 
         <commons-pool.version>1.6</commons-pool.version>
 
@@ -111,8 +109,8 @@
 
         <!-- Other properties -->
         <mybatis-spring-boot-starter.version>1.1.1</mybatis-spring-boot-starter.version>
-        <!--<mysql-connector-java.version>5.1.40</mysql-connector-java.version>-->
-        <mysql-connector-java.version>6.0.5</mysql-connector-java.version>
+        <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
+        <!--<mysql-connector-java.version>6.0.5</mysql-connector-java.version>-->
 
         <!--文档管理-->
         <swagger2.version>2.2.2</swagger2.version>
@@ -128,11 +126,6 @@
             <artifactId>spring-boot-starter-jta-atomikos</artifactId>
         </dependency>
 
-        <!-- 暂时未使用 分布式事务，使用-->
-        <dependency>
-            <groupId>org.codehaus.btm</groupId>
-            <artifactId>btm</artifactId>
-        </dependency>
 
         <!-- spring test-->
         <dependency>
@@ -244,12 +237,12 @@
             <version>${mysql-connector-java.version}</version>
         </dependency>
 
-        <!-- druid -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
+        <!-- druid  暂时未使用，待切换时，再使用-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>druid</artifactId>-->
+            <!--<version>${druid.version}</version>-->
+        <!--</dependency>-->
 
         <!-- dom4j -->
         <dependency>
@@ -568,11 +561,19 @@
 
 
         <!-- Databases - Uses HSQL by default -->
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.hsqldb</groupId>-->
+            <!--<artifactId>hsqldb</artifactId>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+        <!-- 暂时未使用 分布式事务，使用-->
+        <!--<dependency>-->
+            <!--<groupId>org.codehaus.btm</groupId>-->
+            <!--<artifactId>btm</artifactId>-->
+        <!--</dependency>-->
+
+
         <!-- Lombok - Make Java look less redundant -->
         <dependency>
             <groupId>org.projectlombok</groupId>

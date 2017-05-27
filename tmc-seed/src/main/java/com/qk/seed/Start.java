@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Created by hqhan on 2017/5/24 0024.
  */
 @SpringBootApplication
-@EnableTransactionManagement
 @EnableConfigurationProperties(value = { SeedConfigProperties.class })
 public class Start extends SpringBootServletInitializer {
 

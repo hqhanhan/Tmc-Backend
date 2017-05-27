@@ -24,9 +24,11 @@
         <module>tmc-order-center</module>
         <!-- 认证中心-->
         <module>tmc-authenticator</module>
-        <module>tmc-jta</module>
+        <!-- 基类-->
         <module>tmc-base</module>
+        <!-- 管理具体的 entity、dto-->
         <module>tmc-entity</module>
+        <!-- 管理具体的mapper，-->
         <module>tmc-dao</module>
     </modules>
 
