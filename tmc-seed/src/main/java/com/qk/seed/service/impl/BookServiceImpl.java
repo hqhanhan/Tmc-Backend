@@ -5,7 +5,7 @@ import com.qk.seed.model.po.Book;
 import com.qk.seed.model.po.BookWithBookStore;
 import com.qk.seed.dao.repository.BookRepository;
 import com.qk.seed.service.BookService;
-import com.qk.seed.util.PageUtil;
+import com.qk.base.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

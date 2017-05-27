@@ -30,6 +30,7 @@
         <module>tmc-entity</module>
         <!-- 管理具体的mapper，-->
         <module>tmc-dao</module>
+        <module>tmc-security-oauth</module>
     </modules>
 
 

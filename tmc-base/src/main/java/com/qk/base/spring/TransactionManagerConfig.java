@@ -8,7 +8,6 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.jta.JtaTransactionManager;
-
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
