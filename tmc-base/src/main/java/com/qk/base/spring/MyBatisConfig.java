@@ -1,5 +1,6 @@
 package com.qk.base.spring;
 
+import com.alibaba.druid.pool.xa.DruidXADataSource;
 import com.atomikos.jdbc.AtomikosDataSourceBean;
 import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,11 +25,11 @@ public abstract  class MyBatisConfig {
 	protected DataSource createDataSource(ConfigProperties baseConfig,String uniqueResourceName) throws SQLException {
 
 		//druid数据源连接
-//		DruidXADataSource dataSource = new DruidXADataSource();
-//		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//		dataSource.setUrl(baseConfig.getUrl());
-//		dataSource.setUsername(baseConfig.getUsername());
-//		dataSource.setPassword(baseConfig.getPassword());
+		DruidXADataSource dataSource = new DruidXADataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl(baseConfig.getUrl());
+		dataSource.setUsername(baseConfig.getUsername());
+		dataSource.setPassword(baseConfig.getPassword());
 //        dataSource.setInitialSize(baseConfig.getInitialSize());
 //        dataSource.setMaxActive(baseConfig.getMaxActive());
 //        dataSource.setMaxWait(baseConfig.getMaxWait());
@@ -48,12 +49,12 @@ public abstract  class MyBatisConfig {
 
 
 		//常规数据源连接池
-		MysqlXADataSource dataSource = new MysqlXADataSource();
-		dataSource.setUrl(baseConfig.getUrl());
-		dataSource.setPinGlobalTxToPhysicalConnection(true);
-		dataSource.setPassword(baseConfig.getPassword());
-		dataSource.setUser(baseConfig.getUsername());
-		dataSource.setPinGlobalTxToPhysicalConnection(true);
+//		MysqlXADataSource dataSource = new MysqlXADataSource();
+//		dataSource.setUrl(baseConfig.getUrl());
+//		dataSource.setPinGlobalTxToPhysicalConnection(true);
+//		dataSource.setPassword(baseConfig.getPassword());
+//		dataSource.setUser(baseConfig.getUsername());
+//		dataSource.setPinGlobalTxToPhysicalConnection(true);
 
 		AtomikosDataSourceBean wrapped  = new AtomikosDataSourceBean();
 		wrapped .setXaDataSource(dataSource);
