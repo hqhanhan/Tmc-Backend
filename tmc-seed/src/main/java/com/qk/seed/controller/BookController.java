@@ -8,6 +8,7 @@ import com.qk.seed.model.po.Book;
 import com.qk.seed.service.BookService;
 import com.qk.seed.util.PageUtil;
 import io.swagger.annotations.Api;
+import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
+@CommonsLog
 @Api(value = "book服务",description="简单的计算服务API")
 @RestController
 @RequestMapping("/books")
@@ -52,25 +54,31 @@ public class BookController {
                         .setId(bookId));
     }
 
+
+    int i = 0;
+
     @PostMapping("/save")
     public ResponseEntity<?> postBook(@RequestBody Book book) {
         bookService.save(book);
 
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(book.getId())
-                .toUri();
+//        URI location = ServletUriComponentsBuilder
+//                .fromCurrentRequest()
+//                .path("/{id}")
+//                .buildAndExpand(book.getId())
+//                .toUri();
+        log.debug(i);
+        if (i > 2) {
+            throw new NullPointerException();
+        }
+        i++;
 
-        return ResponseEntity
-                .created(location)
-                .body(book);
+        return null;
 
     }
 
 
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<?> save(@RequestBody Book book) {
         bookService.saveBook(book);
 

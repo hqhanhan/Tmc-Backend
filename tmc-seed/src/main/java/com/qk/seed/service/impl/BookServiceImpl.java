@@ -99,7 +99,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     @Transactional
-    public boolean save(Book book) {
+    public boolean save(Book book)  {
         boolean b = bookRepository.insertBook(book) > 0;
         log.debug(b);
 
