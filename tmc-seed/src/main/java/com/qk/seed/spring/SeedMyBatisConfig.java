@@ -1,6 +1,6 @@
 package com.qk.seed.spring;
 
-import com.qk.seed.base.spring.MyBatisConfig;
+import com.qk.base.spring.MyBatisConfig;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;

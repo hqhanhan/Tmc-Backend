@@ -1,6 +1,6 @@
 package com.qk.seed.spring;
 
-import com.qk.seed.base.spring.ConfigProperties;
+import com.qk.base.api.ConfigProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
