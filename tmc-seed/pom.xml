@@ -15,9 +15,15 @@
     <artifactId>tmc-seed</artifactId>
 
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>com.qk</groupId>-->
+            <!--<artifactId>tmc-security-oauth</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>com.qk</groupId>
-            <artifactId>tmc-security-oauth</artifactId>
+            <artifactId>tmc-seed-dao</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

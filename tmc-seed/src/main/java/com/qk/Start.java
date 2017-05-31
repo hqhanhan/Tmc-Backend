@@ -1,7 +1,7 @@
 package com.qk;
 
 
-import com.qk.oauth.spring.OauthConfigProperties;
+
 import com.qk.seed.spring.SeedConfigProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  * Created by hqhan on 2017/5/24 0024.
  */
 @SpringBootApplication
-@EnableConfigurationProperties(value = { SeedConfigProperties.class, OauthConfigProperties.class})
+@EnableConfigurationProperties(value = { SeedConfigProperties.class})
 public class Start extends SpringBootServletInitializer {
 
     @Override

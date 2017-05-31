@@ -26,12 +26,11 @@
         <module>tmc-authenticator</module>
         <!-- 基类-->
         <module>tmc-base</module>
-        <!-- 管理具体的 entity、dto-->
-        <module>tmc-entity</module>
-        <!-- 管理具体的mapper，-->
-        <module>tmc-dao</module>
         <!-- 认证中心服务-->
         <module>tmc-security-oauth</module>
+
+        <module>tmc-seed-dao</module>
+
     </modules>
 
 
