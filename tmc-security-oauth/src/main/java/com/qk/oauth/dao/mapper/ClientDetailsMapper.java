@@ -1,7 +1,10 @@
 package com.qk.oauth.dao.mapper;
 
 import com.qk.oauth.model.po.ClientDetails;
+import org.apache.ibatis.annotations.Mapper;
 
+
+@Mapper
 public interface ClientDetailsMapper {
     int deleteByPrimaryKey(String appid);
 

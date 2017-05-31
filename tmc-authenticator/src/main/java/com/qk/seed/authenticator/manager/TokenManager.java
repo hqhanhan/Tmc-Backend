@@ -1,4 +1,4 @@
-package com.qk.authenticator.manager;
+package com.qk.seed.authenticator.manager;
 
 import java.io.IOException;
 import javax.json.JsonObject;

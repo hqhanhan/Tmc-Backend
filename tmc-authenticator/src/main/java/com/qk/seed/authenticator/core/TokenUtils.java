@@ -1,4 +1,4 @@
-package com.qk.authenticator.core;
+package com.qk.seed.authenticator.core;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;

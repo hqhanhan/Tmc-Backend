@@ -1,7 +1,7 @@
-package com.qk.authenticator.spring;
+package com.qk.seed.authenticator.spring;
 
-import com.qk.authenticator.manager.TokenManager;
-import com.qk.authenticator.manager.TokenManagerImpl;
+import com.qk.seed.authenticator.manager.TokenManager;
+import com.qk.seed.authenticator.manager.TokenManagerImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

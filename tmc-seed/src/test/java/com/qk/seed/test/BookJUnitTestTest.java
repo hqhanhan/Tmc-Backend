@@ -7,7 +7,7 @@ package com.qk.seed.test;
  *  @AutoConfigureMockMvc
  *  @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE,classes = Start.class)
  */
-import com.qk.seed.Start;
+import com.qk.Start;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.service.BookService;
 import org.junit.Rule;
@@ -18,17 +18,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 import java.util.UUID;

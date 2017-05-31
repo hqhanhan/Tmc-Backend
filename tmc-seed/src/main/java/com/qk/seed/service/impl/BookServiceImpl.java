@@ -1,19 +1,23 @@
 package com.qk.seed.service.impl;
 
+import com.qk.oauth.dao.mapper.ClientDetailsMapper;
+import com.qk.oauth.model.po.ClientDetails;
 import com.qk.seed.dao.mapper.BookMapper;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.model.po.BookWithBookStore;
 import com.qk.seed.dao.repository.BookRepository;
 import com.qk.seed.service.BookService;
-import com.qk.base.util.PageUtil;
+import com.qk.seed.util.PageUtil;
+import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
-
+@CommonsLog
 @Service
 public class BookServiceImpl implements BookService {
 
@@ -22,6 +26,9 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookMapper bookMapper;
+
+    @Autowired
+    private ClientDetailsMapper clientDetailsMapper;
 
     @Autowired
     public BookServiceImpl(BookRepository bookRepository) {
@@ -87,5 +94,21 @@ public class BookServiceImpl implements BookService {
     @Transactional
     public boolean deleteBookById(Long id) {
         return bookRepository.deleteBookById(id) > 0;
+    }
+
+
+    @Override
+    @Transactional
+    public boolean save(Book book) {
+        boolean b = bookRepository.insertBook(book) > 0;
+        log.debug(b);
+
+        ClientDetails record = new ClientDetails();
+        record.setAppid(UUID.randomUUID().toString());
+        record.setAppsecret(book.getName());
+        boolean b1 = clientDetailsMapper.insert(record) > 0;
+        log.debug(b1);
+
+        return false;
     }
 }

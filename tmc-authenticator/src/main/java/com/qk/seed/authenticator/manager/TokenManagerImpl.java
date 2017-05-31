@@ -1,4 +1,4 @@
-package com.qk.authenticator.manager;
+package com.qk.seed.authenticator.manager;
 
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -7,8 +7,8 @@ import javax.crypto.SecretKey;
 import javax.json.Json;
 import javax.json.JsonObject;
 
-import com.qk.authenticator.core.JsonUtils;
-import com.qk.authenticator.core.KeyUtil;
+import com.qk.seed.authenticator.core.JsonUtils;
+import com.qk.seed.authenticator.core.KeyUtil;
 import org.jose4j.base64url.Base64;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;

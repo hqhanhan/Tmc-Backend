@@ -1,4 +1,4 @@
-package com.qk.base.spring;
+package com.qk.seed.base.spring;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

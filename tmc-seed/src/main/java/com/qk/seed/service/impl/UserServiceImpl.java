@@ -1,8 +1,8 @@
 package com.qk.seed.service.impl;
 
+import com.qk.seed.dao.repository.UserRepository;
 import com.qk.seed.model.dto.CustomUserDetails;
 import com.qk.seed.model.po.User;
-import com.qk.seed.dao.repository.UserRepository;
 import com.qk.seed.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

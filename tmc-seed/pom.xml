@@ -14,4 +14,12 @@
 
     <artifactId>tmc-seed</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.qk</groupId>
+            <artifactId>tmc-security-oauth</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

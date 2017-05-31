@@ -1,4 +1,4 @@
-package com.qk.base.spring;
+package com.qk.seed.base.spring;
 
 import com.alibaba.druid.pool.xa.DruidXADataSource;
 import com.atomikos.jdbc.AtomikosDataSourceBean;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public abstract  class MyBatisConfig {
 
-	public abstract DataSource  dateSource(ConfigProperties baseConfig )throws SQLException ;
+	public abstract DataSource  dateSource()throws SQLException ;
 	public abstract SqlSessionFactory  sqlSessionFactory( DataSource dataSource)throws Exception;
 	public abstract SqlSessionTemplate  sqlSessionTemplate(SqlSessionFactory sqlSessionFactory)throws Exception;
 

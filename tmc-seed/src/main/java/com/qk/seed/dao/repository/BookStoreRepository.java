@@ -1,7 +1,7 @@
 package com.qk.seed.dao.repository;
 
-import com.qk.seed.model.po.BookStore;
 import com.qk.seed.model.po.BookStoreWithBooks;
+import com.qk.seed.model.po.BookStore;
 
 import java.util.List;
 

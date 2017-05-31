@@ -1,10 +1,11 @@
 package com.qk.oauth.spring;
 
-import com.qk.base.spring.ConfigProperties;
-import com.qk.base.spring.MyBatisConfig;
+import com.qk.seed.base.spring.ConfigProperties;
+import com.qk.seed.base.spring.MyBatisConfig;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,27 +23,28 @@ import java.sql.SQLException;
 
 
 @Configuration
-@EnableTransactionManagement
 @MapperScan(basePackages = "com.qk.oauth.dao.mapper", sqlSessionTemplateRef = "oauthSqlSessionTemplate")
 public class OauthMyBatisConfig extends MyBatisConfig {
 
 
-    @Primary
-    @Bean(name = "oauthDataSource")
+    @Autowired
+    private OauthConfigProperties config;
+
+
     @Override
-    public DataSource dateSource(ConfigProperties baseConfig)throws SQLException {
-        return super.createDataSource(baseConfig,"oauthDataSource");
+    @Bean(name = "oauthDataSource")
+    public DataSource dateSource()throws SQLException {
+        return super.createDataSource(config,"oauthDataSource");
     }
 
-
-    @Bean(name = "oauthSqlSessionFactory")
     @Override
+    @Bean(name = "oauthSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(@Qualifier("oauthDataSource")DataSource dataSource) throws Exception  {
         return super.createSqlSessionFactory(dataSource,"/oauth/mapper/","com.qk.oauth.model");
     }
 
-    @Bean(name = "oauthSqlSessionTemplate")
     @Override
+    @Bean(name = "oauthSqlSessionTemplate")
     public SqlSessionTemplate sqlSessionTemplate(@Qualifier("oauthSqlSessionFactory")SqlSessionFactory sqlSessionFactory)  throws Exception{
         return  super.createSqlSessionTemplate(sqlSessionFactory);
     }

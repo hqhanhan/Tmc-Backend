@@ -1,4 +1,4 @@
-package com.qk.authenticator.filter;
+package com.qk.seed.authenticator.filter;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;

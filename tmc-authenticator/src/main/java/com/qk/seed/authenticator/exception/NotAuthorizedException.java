@@ -1,4 +1,4 @@
-package com.qk.authenticator.exception;
+package com.qk.seed.authenticator.exception;
 
 import lombok.Setter;
 import lombok.experimental.Accessors;

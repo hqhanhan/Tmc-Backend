@@ -1,14 +1,17 @@
 package com.qk.seed.spring;
 
-import com.qk.base.spring.ConfigProperties;
-import com.qk.base.spring.MyBatisConfig;
+import com.qk.oauth.spring.OauthConfigProperties;
+import com.qk.seed.base.spring.ConfigProperties;
+import com.qk.seed.base.spring.MyBatisConfig;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
@@ -20,27 +23,27 @@ import java.sql.SQLException;
  */
 
 @Configuration
-@EnableTransactionManagement
 @MapperScan(basePackages = "com.qk.seed.dao.mapper", sqlSessionTemplateRef = "seedSqlSessionTemplate")
 public class SeedMyBatisConfig extends MyBatisConfig {
 
+    @Autowired
+    private SeedConfigProperties config;
 
+    @Override
     @Primary
     @Bean(name = "seedDataSource")
-    @Override
-    public DataSource dateSource(ConfigProperties baseConfig)throws SQLException {
-        return super.createDataSource(baseConfig,"seedDataSource");
+    public DataSource dateSource()throws SQLException {
+        return super.createDataSource(config,"seedDataSource");
     }
 
-
-    @Bean(name = "seedSqlSessionFactory")
     @Override
+    @Bean(name = "seedSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(@Qualifier("seedDataSource")DataSource dataSource) throws Exception  {
         return super.createSqlSessionFactory(dataSource,"/seed/mapper/","com.qk.seed.model");
     }
 
-    @Bean(name = "seedSqlSessionTemplate")
     @Override
+    @Bean(name = "seedSqlSessionTemplate")
     public SqlSessionTemplate sqlSessionTemplate(@Qualifier("seedSqlSessionFactory")SqlSessionFactory sqlSessionFactory)  throws Exception{
         return  super.createSqlSessionTemplate(sqlSessionFactory);
     }

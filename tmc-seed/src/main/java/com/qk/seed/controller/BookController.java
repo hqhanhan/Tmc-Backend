@@ -6,7 +6,7 @@ import com.qk.seed.core.exception.ResourceNotFoundException;
 import com.qk.seed.model.dto.PaginatedResult;
 import com.qk.seed.model.po.Book;
 import com.qk.seed.service.BookService;
-import com.qk.base.util.PageUtil;
+import com.qk.seed.util.PageUtil;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,8 +52,26 @@ public class BookController {
                         .setId(bookId));
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<?> postBook(@RequestBody Book book) {
+        bookService.save(book);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(book.getId())
+                .toUri();
+
+        return ResponseEntity
+                .created(location)
+                .body(book);
+
+    }
+
+
+
+    @PostMapping()
+    public ResponseEntity<?> save(@RequestBody Book book) {
         bookService.saveBook(book);
 
         URI location = ServletUriComponentsBuilder
@@ -67,6 +85,7 @@ public class BookController {
                 .body(book);
 
     }
+
 
     @PutMapping("/{bookId}")
     public ResponseEntity<?> putBook(@PathVariable Long bookId, @RequestBody Book book) {

@@ -1,7 +1,7 @@
 package com.qk.seed.dao.mapper;
 
-import com.qk.seed.model.po.Book;
 import com.qk.seed.dao.repository.BookRepository;
+import com.qk.seed.model.po.Book;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

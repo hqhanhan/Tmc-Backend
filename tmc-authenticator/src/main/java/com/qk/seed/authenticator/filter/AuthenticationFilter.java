@@ -1,11 +1,10 @@
-package com.qk.authenticator.filter;
+package com.qk.seed.authenticator.filter;
 
-import com.qk.authenticator.exception.NotAuthorizedException;
-import com.qk.authenticator.manager.TokenManager;
+import com.qk.seed.authenticator.exception.NotAuthorizedException;
+import com.qk.seed.authenticator.manager.TokenManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
-import java.util.Enumeration;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;

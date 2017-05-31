@@ -1,6 +1,6 @@
 package com.qk.oauth.spring;
 
-import com.qk.base.spring.ConfigProperties;
+import com.qk.seed.base.spring.ConfigProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
